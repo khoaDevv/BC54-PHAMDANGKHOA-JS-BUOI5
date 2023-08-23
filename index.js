@@ -88,7 +88,7 @@ function tinhCap(){
     const loaiKhach = document.getElementById('loai-khach').value ;
     const ketNoi = document.getElementById("ket-noi").value * 1 ;
     const soKenh = document.getElementById('so-kenh').value * 1 ;
-    let tienCap = 0 ;
+    let tienCap = 0;
     if (loaiKhach === "nha-dan"){
         tienCap = 4.5 + 20.5 + 7.5 * soKenh ;
     }else if (loaiKhach == "doanh-nghiep"){
