@@ -76,8 +76,6 @@ function tinhThue(){
 function thayDoi(){
     const loaiKhach = document.getElementById('loai-khach').value;
     const ketNoiInPut = document.getElementById("ket-noi");
-    const soKenhInput = document.getElementById('so-kenh');
-    
     if (loaiKhach === "nha-dan"){
         ketNoiInPut.disabled = true;
     }else if (loaiKhach === "doanh-nghiep"){
