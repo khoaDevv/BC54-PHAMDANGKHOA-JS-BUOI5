@@ -51,7 +51,8 @@ function tienDien(){
 // Tính thuế thu nhập cá nhân
 function tinhThue(){
     var thuNhap = document.getElementById('thu-nhap').value * 1;
-    var phuThuoc = document.getElementById('phu-thuoc').value * 1;
+    var phuThuoc = document.getElementById('phu-thuoc').value;
+    
     var chiuThue ;
     if (thuNhap <= 60){
         chiuThue = (thuNhap - 4 - phuThuoc *1.6) * 0.05 ;
@@ -68,7 +69,7 @@ function tinhThue(){
     }if (thuNhap) {
         chiuThue = (thuNhap - 4 - phuThuoc * 1.6) * 3.5 ;
     }
-    document.getElementById('tinhThue').innerHTML = `Trả Thuế : ${chiuThue.toLocaleString()}` ;
+    document.getElementById('tinhThue').innerHTML = `Trả Thuế : ${chiuThue.toFixed(2)}` ;
 }
 
 // tính tiền cáp
@@ -78,12 +79,9 @@ function thayDoi(){
     const soKenhInput = document.getElementById('so-kenh');
     
     if (loaiKhach === "nha-dan"){
-        ketNoiInPut.disabled = true ;
-        soKenhInput.disabled = false ;
-        
+        ketNoiInPut.disabled = true;
     }else if (loaiKhach === "doanh-nghiep"){
         ketNoiInPut.disabled = false ;
-        soKenhInput.disabled = false ;
     }
 }
 function tinhCap(){
