@@ -48,15 +48,16 @@ function tienDien(){
     }
     document.getElementById('tong-tien').innerHTML = `${ten} cần thanh toán :${tongTien.toLocaleString()} VNĐ`;
 }
-// Tính thuế thu nhập cá nhân
+// Tính thuế thu nhập cá nhân.
 function tinhThue(){
     var thuNhap = document.getElementById('thu-nhap').value * 1;
     var phuThuoc = document.getElementById('phu-thuoc').value;
     var chiuThue = 0 ;
-    if (thuNhap <= 60){
+    if (thuNhap <= 0 ){
+        return 0 
+    }else if (thuNhap <= 60){
         chiuThue = (thuNhap - 4 - phuThuoc * 1.6 ) * 0.05 ;
-        console.log("🚴‍♀️ - tinhThue - chiuThue:", chiuThue);
-    } else if (thuNhap <=120){
+     } else if (thuNhap <=120){
         chiuThue = (thuNhap - 4 - phuThuoc * 1.6) * 0.1 ;
     }else if (thuNhap <=210){
         chiuThue = (thuNhap - 4 - phuThuoc * 1.6) * 1.5 ;
@@ -69,7 +70,7 @@ function tinhThue(){
     }if (thuNhap >= 960 ) {
         chiuThue = (thuNhap - 4 - phuThuoc * 1.6) * 3.5 ;
     }
-    document.getElementById('tinhThue').innerHTML = `Trả Thuế : ${chiuThue.toFixed(2)}` ;
+    document.getElementById('tinhThue').innerHTML = `Trả Thuế : ${chiuThue.toLocaleString(2)}` ;
 }
 
 // tính tiền cáp
